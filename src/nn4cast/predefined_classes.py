@@ -1,49 +1,35 @@
 #import the necessary libraries
-import sys
-import numpy as np
-import matplotlib as mpl
+import os
+import random
+import shutil
+import time
+import warnings
+
+import matplotlib.colors as colors
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
 import pandas as pd
 import xarray as xr
-from scipy import stats as sts
-import scipy.stats as stats
-from scipy import signal
-from cartopy import crs as ccrs 
-import cartopy as car
-import numpy.linalg as linalg
-import numpy.ma as ma
-from scipy.stats import pearsonr
-from scipy.stats import t
-import matplotlib.dates as mdates
-import matplotlib.colors as colors
-from matplotlib.ticker import MaxNLocator
-from matplotlib.colors import from_levels_and_colors
-from cartopy.util import add_cyclic_point 
 import xskillscore as xs
-import time
-import random
-from tensorflow.keras.utils import plot_model
-from kerastuner.tuners import RandomSearch
-from sklearn.model_selection import KFold
-import os
-import shutil
 import yaml
-import matplotlib.gridspec as gridspec
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
-import math
-import alibi
-import matplotlib.patches as mpatches  
 from alibi.explainers import IntegratedGradients
+from cartopy import crs as ccrs
+from kerastuner.tuners import RandomSearch
+from matplotlib.colors import from_levels_and_colors
+from matplotlib.ticker import MaxNLocator
+from scipy.stats import t
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.model_selection import KFold
 
 #The following two lines are coded to avoid the warning unharmful message.
-import warnings
 warnings.filterwarnings("ignore")
 
 import tensorflow as tf
 import tensorflow.keras as keras
 from tensorflow.keras.models import load_model
+
 plt.style.use('seaborn-v0_8-darkgrid')
 
 class ClimateDataPreprocessing:
