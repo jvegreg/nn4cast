@@ -122,7 +122,7 @@ class ClimateDataPreprocessing:
             std_reference (xarray.DataArray): Standard deviation reference data over the training period.
         """
 
-        data = xr.open_dataset(self.relative_path, decode_times=True) / self.scale
+        data = xr.open_dataset(self.relative_path, decode_times=True, decode_coords='all') / self.scale
         time = data['time'].astype('datetime64[M]')
         data = data.assign_coords(time=time)
 
